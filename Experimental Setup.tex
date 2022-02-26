@@ -1,0 +1,16 @@
+%_____________________________________________________________________________________________ 
+% LATEX Template: Department of Comp/IT BTech Project Reports
+% Sample Chapter
+% Sun Mar 27 10:25:35 IST 2011
+%
+% Note: Itemization, enumeration and other things not shown. A sample figure is included.
+%_____________________________________________________________________________________________ 
+
+
+{\let\clearpage\relax \chapter{Experimental Setup}}
+
+For training ARU Net, we used a machine with 8GB of dedicated GPU memory and 32GB of RAM. The machine had 12 CPU cores, helping with faster augmentations on the go. The GPU used was of type was NVIDIA GeForce GTX 1070. With this device harwarwe configuration, the training took around 6-7 hours for 100 epochs.We used tensorflow-gpu for model training purposes, open-cv and scikit-learn for augmentations.
+
+For training CRAFT in supervised mode along with augmentations, we procured a virtual machine on azure with 16GB of dedicated GPU memory.The GPU used was Nvidia Tesla T4.The machine had 28GB of RAM and 4 physical CPUs.Even with this high end training setup, an epoch took around 90 minutes to complete.The experiments were run inside gpu optimised ptorch containers provided by Nvidia. We used pytorch for model training with custom dataloaders and used Open-CV for most of the post processing jobs.
+
+%_____________________________________________________________________________________________ 

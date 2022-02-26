@@ -1,0 +1,18 @@
+%_____________________________________________________________________________________________ 
+% LATEX Template: Department of Comp/IT BTech Project Reports
+% Abstract of Report
+% Sun Mar 27 10:34:00 IST 2011
+%_____________________________________________________________________________________________ 
+\setstretch{1.5}
+\begin{abstract}
+%\addcontentsline{toc}{chapter}{Abstract}	% This makes sure abstract is included in contents.
+Optical Character Recognition(OCR) is widely used across many products and services offered by Axis Technical Group.While there are effective OCR models developed for line level and word level optical character recognition, we want to get better at extracting the text lines and words from the pages so as to feed them to the word and line ocr models which.The present techniques in place perform good at word extraction for machine print docuemnts but are not effective for extracting handwritten words.We have worked on developing deep learning models for text localisation, segmentation and detection and to eventually feed the output of such models to word and line ocr models for recognition,which are trained robustly and perform really well.We explored 2 networks for the addressing the problem - ARU Net and CRAFT. ARU Net was originally designed to be used on historic documents while CRAFT was designed to be quite generic with text recognition.We prepared our own training data consisting of documents,invoices,pages from books etc., introduced augmentations, experimented and altered the networks as per our observations, and introduced some post processing techniques to get better text bounding boxes to feed to OCR models.We are able to get descent text-line bounding boxes  using ARU Net.The supervised learning experiments with CRAFT have produced models which do a perfect job at providing word-level bounding boxes for machine print documents but misses out on recognising all words in certain documents and doesn't perform as good on handwritten ones. The experiments with semi-supervised learning are ongoing which is expected to improve the results for handwritten document.
+\newline
+\textbf{Keywords:}
+\newline
+ARU Net - Attention Residual U-Net
+\newline
+CRAFT - Character Region Awareness for Text Detection
+\end{abstract}
+
+%_____________________________________________________________________________________________ 

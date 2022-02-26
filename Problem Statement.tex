@@ -1,0 +1,44 @@
+% TODO: \usepackage{graphicx} required
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.7\linewidth]{"system diagram"}
+% 	\caption{Text Segmentation and OCR: System diagram}
+% 	\label{fig:system-diagram}
+% \end{figure}
+
+%_____________________________________________________________________________________________ 
+% LATEX Template: Department of Comp/IT BTech Project Reports
+% Sample Chapter
+% Sun Mar 27 10:25:35 IST 2011
+%
+% Note: Itemization, enumeration and other things not shown. A sample figure is included.
+%_____________________________________________________________________________________________ 
+
+\setstretch{1.5}
+{\let\clearpage\relax \chapter{Problem Statement and Research Objectives}}
+
+\textbf{To improve Optical Character Recognition for handwritten and machine print documents by doing Text detection, localisation and segmentation}
+\newline
+
+There are effective internal models developed over time for performing Character recognition on words as well as on lines extracted from the pages of documents. Several heuristics are used for line and word extraction from the page. Tesseract is also used in some cases to get the word regions for feeding to the Line and Word OCR models there after. While the word/line extraction works well for simpler machine print documents, it is not able to meet expectations in case of handwriting data which has words in different orientations,fonts etc. and also in case of some complex machine print cases where the image of the page is distorted due to camera angles, brightness etc. Thus, performing bad in the word and line extraction eventually leads to incorrect or no results for those cases after the Line/Word OCR models.
+
+This problem can be addressed by using deep learning based models for text localisation, where in we identify the specific areas where the text is located in the page, extract those regions and pass them to the line and word OCR models already in place. The deep learning models are so developed that they are agnostic to camera angles, noise and all other distortions in the image. Also, the models should be able to identify the handwritten words accurately to be albe to excel in the later models for recognition task.
+
+Following the word/line segmentation part, we have the Line and Word OCR models which are at the current state really good at recognising the words in machine print documents and the human load is also very low but still we have the scope of improvement in the handwriting detection models which need to be agnostic of font,ink color, orientation and noise in the image. As an additional improvement, we also want to get better at providing the character level boundaries in the image after recognising the word, this is an important parameter depicting the human load, as humans can be directed to verify particular characters in the image with lower confidence.
+
+
+\vspace{10pt}
+\vspace{10pt}
+{\Large{\textbf{Objectives}}}
+\begin{enumerate}
+	
+	\item To develop deep learning based models for text detection, localisation and segmentation in the docuements of handwritten and  machine print data, eventually to get better at recognizing the words and lines in the documents using already developed models.
+	
+	\item To improve word and line OCR models for text recognition post text detection step, speciifically for handwritten data.
+	
+	\item To get better at recognising text in the bad quality images with distortions like noise, random camera angles, brightness, different ink colour etc.
+	
+	\item To be able to precisely identify character level boundaries after recognising the words in the image so as to be able to re-direct the human user to verify the characters with lower confidence.
+	
+\end{enumerate}
+%_____________________________________________________________________________________________ 

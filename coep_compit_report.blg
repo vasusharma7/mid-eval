@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: coep_compit_report.aux
+The style file: plain.bst
+Database file #1: bib.bib
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 3
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 3
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 4
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 4
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Youngmin Baek, Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee" for entry 5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Youngmin Baek, Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee" for entry 5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "T. Grüning, R. Labahn, M. Diem, F. Kleber, S. Fiel" for entry 6
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "T. Grüning, R. Labahn, M. Diem, F. Kleber, S. Fiel" for entry 6
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "T. Grüning, R. Labahn, M. Diem, F. Kleber, S. Fiel" for entry 6
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "T. Grüning, R. Labahn, M. Diem, F. Kleber, S. Fiel" for entry 6
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 4
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 4
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 3
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Tobias Grüning, Gundram Leifert, Tobias Strauß, Johannes Michael, Roger Labahn" for entry 3
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Youngmin Baek, Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee" for entry 5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Youngmin Baek, Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee" for entry 5
+while executing---line 1090 of file plain.bst
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            519 strings with 4890 characters,
+and the built_in function-call counts, 1268 in all, are:
+= -- 120
+> -- 42
+< -- 0
++ -- 18
+- -- 12
+* -- 38
+:= -- 219
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 42
+empty$ -- 133
+format.name$ -- 12
+if$ -- 277
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 0
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 48
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 42
+stack$ -- 0
+substring$ -- 30
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 0
+while$ -- 12
+width$ -- 7
+write$ -- 62
+(There were 16 error messages)

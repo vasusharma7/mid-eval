@@ -1,0 +1,36 @@
+%_____________________________________________________________________________________________ 
+% LATEX Template: Department of Comp/IT BTech Project Reports
+% Sample Chapter
+% Sun Mar 27 10:25:35 IST 2011
+%
+% Note: Itemization, enumeration and other things not shown. A sample figure is included.
+%_____________________________________________________________________________________________ 
+
+
+{\let\clearpage\relax \chapter{Proposed Methodology/Solution}}
+
+We went on to perform two experiments parallely for text segmentation - training models for ARU Net and CRAFT.While ARU Net just outputs baselines for the text, post-processing techniques were applied to be able to react at text-line level segmentation from the page\cite{3}.The CRAFT model produces character region and affinity scores which are also passed through post-processing methods to reach at word level bounding boxes.\cite{5}
+
+The authors of the ARU Net trained the model mainly on handwritten historic documents. The model weight files avaialable are useful just for inference purpose while cannot be used for transfer learning. The pretrained weights work well on the similar historic documents and comes to descent baselines for simpler non-augmented handwritten documents while fails to come to proper baselines for machine print documents which have random distortions and augmentations. So, for dealing with all these problems, we came up to a custom dataset for training. The dataset we used consists of a mix of historic documents, IAM dataset and some internal confidential documents handpicked from the ones on which Omnipage does extremely well.
+
+The baselines for historic documents are annotated using some open source python scripts and DigiTexx as cited in the paper mentioned in Literature Review Section\cite{6}.The IAM database contains 13,353 images of handwritten lines of text created by 657 writers. The texts those writers transcribed are from the Lancaster-Oslo/Bergen Corpus of British English and it resembles real world handwritten data. It includes contributions from 657 writers making a total of 1,539 handwritten pages comprising of 115,320 words and is categorized as part of modern collection. The database is labeled at the sentence, line, and word levels. The internal documents consisted of invoices, book pages etc.. After running omnipage on the samples, we handpick the images for which we get accurate predictions for the lines and words and then form baselines using pre-processing methods on the word level bounding box outputs that we get from omnipage.The final dataset consisted of around 1024 images for training and 128 images for validation.
+
+To tackle the problem of under performance on the augmented images and on the images which are not so clear, we introduced rigorous augmentations on the training data on the fly so as to match the real world data on which we have to perform inferences. We introduced elastic deformations,affine transformations, horizontal flips, random rotation, perspective transformations etc, completely replicating the real world inference data.
+
+After collection of all the data and all the augmentations in place, we trained ARU Net from scratch without fine-tuning for around 200 epochs with 250 batch steps per epoch. The network learns to draw decent baselines even on training on a very small dataset ans we get to see good baselines even after training for few epochs.The results start to saturate after 150 epochs.
+
+The ground truths and the output of the network is a set of 3 images where in first image has baseline regions and the second image has vertical boundaries at the start and end of each baseline, particularly useful to identify the lines in multi-columnar documents.The third image is just the inverted image of the image obtained by combining first 2 images together.
+
+After we get the baselines, we employ a post-processing technique to reach to the text segmentation. We super-impose the baselines obtained from ARU Net on top of the corresponding text in the image and as a result we connect all the words in a line with the baseline. This is followed by image cleaning and discarding some pixels based on thresholds obtained by hyper-parameter tuning and utlimately we perform connected component analysis where in we identify the regions which are connected together, which in our case are the differnet words in a line. The output from the connected component analysis is passed on to detect the minimum area rectangle which will completely surround the connected region and hence we get the bounding boxes around the words in a line.
+
+For CRAFT based approach, we planned to train the model both using supervised learning and semi-supervised learning.As for now, the training for supervised learning method has been done. For superivised learning, we need a dataset with character level bounding boxes and word labels. We prepared custom dataset using IAM data avaialable and some handpicked internal images of invoices, client documents on which Omnipage performed extremely well. To completely replicate the real world exmaple cases, we drew synthetic baselines below the IAM images. The final dataset consisted of around 1800 images which were put on training and 200 images for validation set.
+In every training batch during epochs,we also used synthetic dataset used by the authors of CRAFT paper which consists of words placed randomly on some scenic backgrounds.One sample from this dataset was combined with 3 instances of images from the custom dataset generated.This was done so that the model doesn't lose the knowlege it has gained from the previous dataset.So the network saw around 2500 images in each epoch.
+
+We also introduced a number of augmentations to replicate the real world data. Some of the augmenatations used were functional (sin) deformations, shear tranform, introducing random lines, random brightness and noise, random rotation and 3D perspective shifts. Considerable amount of time was spent to tune the hyperparameters used in augmentations since some of the augmentations involve distortion of character regions and hence parallely affect the region scores and affinity scores ground truths.
+
+The training loops of CRAFT being very resource hungry, take very long time to complete.We decided to go with finetuing CRAFT,by borrowing weights from the model which was trained on synthetic data by the authors.We were able to train for around 100 epochs and studied the results on by visually inspecting the outputs on the test set images selected based on edge cases. 
+The model output is a set of 2 images - region and character scores which are super-imposed on top of each othe, as a result the different character regions of a word get connected with affininty scores in between and eventuall this is passed through same post-processing techniques used for ARU Net to get the exact bounding boxes around the words.
+
+
+
+%_____________________________________________________________________________________________ 
