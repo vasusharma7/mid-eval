@@ -20,11 +20,11 @@
 \textbf{To improve Optical Character Recognition for handwritten and machine print documents by doing Text detection, localisation and segmentation}
 \newline
 
-There are effective internal models developed over time for performing Character recognition on words as well as on lines extracted from the pages of documents. Several heuristics are used for line and word extraction from the page. Tesseract is also used in some cases to get the word regions for feeding to the Line and Word OCR models there after. While the word/line extraction works well for simpler machine print documents, it is not able to meet expectations in case of handwriting data which has words in different orientations,fonts etc. and also in case of some complex machine print cases where the image of the page is distorted due to camera angles, brightness etc. Thus, performing bad in the word and line extraction eventually leads to incorrect or no results for those cases after the Line/Word OCR models.
+Although the established techniques work well for segmentation of straight-forward machine print, images distorted due to camera angles, brightness, focus etc, containing handwritten content, containing mixed text orientation and fonts etc pose a significant challenge for text localization as well as text recognition. Errors in the earlier segmentation stage compund the problems in subsequent stages of the pipeline resulting in poor outcomes.
 
-This problem can be addressed by using deep learning based models for text localisation, where in we identify the specific areas where the text is located in the page, extract those regions and pass them to the line and word OCR models already in place. The deep learning models are so developed that they are agnostic to camera angles, noise and all other distortions in the image. Also, the models should be able to identify the handwritten words accurately to be albe to excel in the later models for recognition task.
+This problem can be addressed by using deep learning based models for text localisation, where in we identify specific areas where the text is located in the page, extract those regions and pass them to the line or word-level recognition models. The deep learning models are so developed that they are agnostic to camera angles, noise and many other distortions in the image.
 
-Following the word/line segmentation part, we have the Line and Word OCR models which are at the current state really good at recognising the words in machine print documents and the human load is also very low but still we have the scope of improvement in the handwriting detection models which need to be agnostic of font,ink color, orientation and noise in the image. As an additional improvement, we also want to get better at providing the character level boundaries in the image after recognising the word, this is an important parameter depicting the human load, as humans can be directed to verify particular characters in the image with lower confidence.
+As an additional improvement, we also want to get character level boundaries in the image along with word or line regions/boundaries. This is a crucial feature in reducing the human effort needed in cleaning up OCR or information extraction results, as the manual effort can now be directed to verify particular characters in the image with lower confidence.
 
 
 \vspace{10pt}
@@ -38,7 +38,7 @@ Following the word/line segmentation part, we have the Line and Word OCR models 
 	
 	\item To get better at recognising text in the bad quality images with distortions like noise, random camera angles, brightness, different ink colour etc.
 	
-	\item To be able to precisely identify character level boundaries after recognising the words in the image so as to be able to re-direct the human user to verify the characters with lower confidence.
+	\item To be able to precisely identify character level boundaries along with recognising words in the image so as to be able to re-direct the human user to verify the characters with lower confidence.
 	
 \end{enumerate}
 %_____________________________________________________________________________________________ 
