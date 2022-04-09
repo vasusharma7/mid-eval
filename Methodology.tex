@@ -30,8 +30,19 @@ In every training batch during epochs,we also used synthetic dataset used by the
 We also introduced a number of augmentations to replicate the real world data. Some of the augmenatations used were functional (sin) deformations, shear tranform, introducing random lines, random brightness and noise, random rotation and 3D perspective shifts. Considerable amount of time was spent to tune the hyperparameters used in augmentations since some of the augmentations involve distortion of character regions and hence parallely affect the region scores and affinity scores ground truths.
 
 The training loops of CRAFT being very resource hungry, take very long time to complete.We decided to go with finetuing CRAFT,by borrowing weights from the model which was trained on synthetic data by the authors.We were able to train for around 100 epochs and studied the results on by visually inspecting the outputs on the test set images selected based on edge cases. 
-The model output is a set of 2 images - region and character scores which are super-imposed on top of each othe, as a result the different character regions of a word get connected with affininty scores in between and eventuall this is passed through same post-processing techniques used for ARU Net to get the exact bounding boxes around the words.
+The model output is a set of 2 images - region and character scores which are super-imposed on top of each other, as a result the different character regions of a word get connected with affinity scores in between and eventually this is passed through same post-processing techniques used for ARU Net to get the exact bounding boxes around the words.
 
 
+We were not able to get discrete bounding boxes for some words and figures i.e. the region and affinity maps in the output of the model were such that there is more than one resultant bounding boxes for a single word or a numerical figure.This is a crucial problem to resolve from business perspective as it would also affect the later stages of OCR pipeline. Also, there were a lot of cases where the commas,full-stops and other symbols in the text were getting missed out. Further, there were no region and affinity scores for a number of words in handwritten text.
 
-%_____________________________________________________________________________________________ 
+To tackle all these problems, we altered the network architecture of original CRAFT model and introduced a third score map called as word map.Along with producing the region and affinity scores maps, we also output word score map, completely highlighting the regions with words in the text.The necessary changes were also done in the calculation of loss function where we introduced third cost.In the post-processing steps, we take all three score maps together - word, region and affinity maps to produce the final word bounding boxes.
+
+We did several modifications to the network.We began by making a copy of the last 5 convolutional layers to produce the word score map. We trained the network, keeping the bottom layers(VGG-net and up-convolutional layers) and the other set of convolutional layers for region and affinity score maps frozen.
+
+In the next iteration, we went on to make a copy of all the UP-Convolutional layers and the final 5 convolutional layers to train the network for predicting the word map. We kept the other set of up-convolutional layers and the last convolutional layers frozen for region and affinity scores.
+
+For training the network, we generated the word region score maps in the same way we generate region and affinity maps, with some adjustments to heights and widths of the words. The final word maps were generated after doing several visual inspections of various iterations of word scores generated for a set of sample images.
+
+The improvements in the results after the introduction of third cost are discussed in the next section.
+
+%____duced_________________________________________________________________________________________ 

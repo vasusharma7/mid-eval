@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.11.19)  26 FEB 2022 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.11.19)  27 FEB 2022 01:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,8 +204,7 @@ Overfull \hbox (21.8686pt too wide) in paragraph at lines 23--24
 [][] 
  []
 
-[7 <./Training Loss ARU Net.png>]
-<in.jpg, id=44, 1161.33875pt x 821.0675pt>
+<in.jpg, id=40, 1161.33875pt x 821.0675pt>
 File: in.jpg Graphic file (type jpg)
 <use in.jpg>
 Package pdftex.def Info: in.jpg  used on input line 28.
@@ -215,7 +214,8 @@ Overfull \hbox (21.86694pt too wide) in paragraph at lines 28--29
 [][] 
  []
 
-<out.jpg, id=45, 1161.33875pt x 821.0675pt>
+[7 <./Training Loss ARU Net.png> <./Validation Loss ARU Net.png>]
+<out.jpg, id=46, 1161.33875pt x 821.0675pt>
 File: out.jpg Graphic file (type jpg)
 <use out.jpg>
 Package pdftex.def Info: out.jpg  used on input line 33.
@@ -225,8 +225,7 @@ Overfull \hbox (21.86694pt too wide) in paragraph at lines 33--34
 [][] 
  []
 
-[8 <./Validation Loss ARU Net.png> <./in.jpg>]
-<res.jpg, id=50, 1161.33875pt x 821.0675pt>
+<res.jpg, id=47, 1161.33875pt x 821.0675pt>
 File: res.jpg Graphic file (type jpg)
 <use res.jpg>
 Package pdftex.def Info: res.jpg  used on input line 39.
@@ -236,6 +235,7 @@ Overfull \hbox (21.86694pt too wide) in paragraph at lines 39--40
 [][] 
  []
 
+[8 <./in.jpg> <./out.jpg>]
 <res_boxes.jpg, id=51, 1161.33875pt x 821.0675pt>
 File: res_boxes.jpg Graphic file (type jpg)
 <use res_boxes.jpg>
@@ -246,8 +246,8 @@ Overfull \hbox (21.86694pt too wide) in paragraph at lines 45--46
 [][] 
  []
 
-[9 <./out.jpg> <./res.jpg>] [10 <./res_boxes.jpg>]
-<Training Loss CRAFT.png, id=59, 2767.33875pt x 1453.43pt>
+[9 <./res.jpg> <./res_boxes.jpg>]
+<Training Loss CRAFT.png, id=55, 2767.33875pt x 1453.43pt>
 File: Training Loss CRAFT.png Graphic file (type png)
 <use Training Loss CRAFT.png>
 Package pdftex.def Info: Training Loss CRAFT.png  used on input line 62.
@@ -257,6 +257,7 @@ Overfull \hbox (21.8686pt too wide) in paragraph at lines 62--63
 [][] 
  []
 
+[10]
 <Validation Loss CRAFT.png, id=60, 2767.33875pt x 1453.43pt>
 File: Validation Loss CRAFT.png Graphic file (type png)
 <use Validation Loss CRAFT.png>
@@ -267,8 +268,7 @@ Overfull \hbox (21.8686pt too wide) in paragraph at lines 67--68
 [][] 
  []
 
-[11 <./Training Loss CRAFT.png>]
-<craft_mask.jpg, id=65, 963.6pt x 642.4pt>
+<craft_mask.jpg, id=61, 963.6pt x 642.4pt>
 File: craft_mask.jpg Graphic file (type jpg)
 <use craft_mask.jpg>
 Package pdftex.def Info: craft_mask.jpg  used on input line 73.
@@ -278,7 +278,8 @@ Overfull \hbox (21.85799pt too wide) in paragraph at lines 73--74
 [][] 
  []
 
-<craft_out.jpg, id=66, 819.06pt x 1126.2075pt>
+[11 <./Training Loss CRAFT.png> <./Validation Loss CRAFT.png>]
+<craft_out.jpg, id=67, 819.06pt x 1126.2075pt>
 File: craft_out.jpg Graphic file (type jpg)
 <use craft_out.jpg>
 Package pdftex.def Info: craft_out.jpg  used on input line 78.
@@ -288,10 +289,10 @@ Overfull \hbox (21.87195pt too wide) in paragraph at lines 78--79
 [][] 
  []
 
-[12 <./Validation Loss CRAFT.png> <./craft_mask.jpg>]) (./Conclusion.tex
+) (./Conclusion.tex
 Chapter 6.
-[13 <./craft_out.jpg>]) (./coep_compit_report.bbl) [14]
-(./coep_compit_report.aux) ) 
+[12 <./craft_mask.jpg> <./craft_out.jpg>]) (./coep_compit_report.bbl [13])
+[14] (./coep_compit_report.aux) ) 
 Here is how much of TeX's memory you used:
  1959 strings out of 481252
  29337 string characters out of 5915887
@@ -299,14 +300,14 @@ Here is how much of TeX's memory you used:
  18867 multiletter control sequences out of 15000+600000
  406530 words of font info for 36 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,9n,74p,1797b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on coep_compit_report.pdf (17 pages, 1978595 bytes).
+ 68i,9n,74p,1638b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on coep_compit_report.pdf (17 pages, 1977393 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
